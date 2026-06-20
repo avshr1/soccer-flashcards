@@ -48,6 +48,8 @@ GIF created with [Kap](https://getkap.co/)
 
 Describe any challenges encountered while building the app.
 
+The challenging part was making sure the random "Next" button never repeated the same card logic , and using `Math.random()` with a changing `key` prop to reset each card's flip state.
+
 ## License
 
     Copyright 2026 Avash
