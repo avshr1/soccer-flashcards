@@ -4,7 +4,7 @@ Submitted by: **Avash Shrestha**
 
 This web app: **A flashcard study app for learning basic soccer rules and terminology. Users see a question (front of the card), click to flip it and reveal the answer, and can click "Next Card" to jump to a new, randomly selected card from the set.**
 
-Time spent: **X** hours spent in total
+Time spent: 2 hours spent in total
 
 ## Required Features
 
