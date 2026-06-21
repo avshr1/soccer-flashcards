@@ -1,57 +1,60 @@
-# Web Development Project 2 - *Soccer Basics Flashcards*
+# Web Development Project 3 - *Soccer Basics Flashcards (Part 2)*
 
 Submitted by: **Avash Shrestha**
 
-This web app: **A flashcard study app for learning basic soccer rules and terminology. Users see a question (front of the card), click to flip it and reveal the answer, and can click "Next Card" to jump to a new, randomly selected card from the set.**
+This web app: **A flashcard study app for learning basic soccer rules and terminology. Users can type a guess into an input box and get instant visual feedback on whether it's correct before seeing the answer, and can navigate forward and backward through an ordered list of cards using Previous/Next buttons that disable at the start and end of the list.**
 
-Time spent: 2 hours spent in total
+Time spent: **2** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The app displays the title of the card set, a short description, and the total number of cards**
-  - [x] Title of card set is displayed 
-  - [x] A short description of the card set is displayed 
-  - [x] A list of card pairs is created
-  - [x] The total number of cards in the set is displayed 
-  - [x] Card set is represented as a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
-- [x] **A single card at a time is displayed**
-  - [x] Only one half of the information pair is displayed at a time
-- [x] **Clicking on the card flips the card over, showing the corresponding component of the information pair**
-  - [x] Clicking on a card flips it over, showing the back with corresponding information 
-  - [x] Clicking on a flipped card again flips it back, showing the front
-- [x] **Clicking on the next button displays a random new card**
+- [x] **The user can enter their guess into an input box *before* seeing the flipside of the card**
+  - Application features a clearly labeled input box with a submit button where users can type in a guess
+  - Clicking on the submit button with an **incorrect** answer shows visual feedback that it is wrong 
+  -  Clicking on the submit button with a **correct** answer shows visual feedback that it is correct
+- [x] **The user can navigate through an ordered list of cardss**
+  - A forward/next button displayed on the card navigates to the next card in a set sequence when clicked
+  - A previous/back button displayed on the card returns to the previous card in the set sequence when clicked
+  - Both the next and back buttons should have some visual indication that the user is at the beginning or end of the list (for example, graying out and no longer being available to click), not allowing for wrap-around navigation
 
 The following **optional** features are implemented:
 
-- [ ] Cards contain images in addition to or in place of text
-  - [ ] Some or all cards have images in place of or in addition to text
-- [ ] Cards have different visual styles such as color based on their category
-  - Example categories you can use:
-    - Difficulty: Easy/medium/hard
-    - Subject: Biology/Chemistry/Physics/Earth science
+
+- [ ] Users can use a shuffle button to randomize the order of the cards
+  - Cards should remain in the same sequence (**NOT** randomized) unless the shuffle button is clicked 
+  - Cards should change to a random sequence once the shuffle button is clicked
+- [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
+  - Answers are considered correct even if they only partially match the answer on the card 
+  - Examples: ignoring uppercase/lowercase discrepancies, ignoring punctuation discrepancies, matching only for a particular part of the answer rather than the whole answer
+- [ ] A counter displays the user's current and longest streak of correct responses
+  - The current counter increments when a user guesses an answer correctly
+  - The current counter resets to 0 when a user guesses an answer incorrectly
+  - A separate counter tracks the longest streak, updating if the value of the current streak counter exceeds the value of the longest streak counter 
+- [ ] A user can mark a card that they have mastered and have it removed from the pool of displayed cards
+  - The user can mark a card to indicate that it has been mastered
+  - Mastered cards are removed from the pool of displayed cards and added to a list of mastered cards
+
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented user stories:
 
-<img src='https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjdsaXgyNDNqNWF3eGtwYzdmdTNyZ2hmMWFpdjdsZWFwc3F4b3c1eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1sXge4xlNCRHs3zUTN/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2o0cjJhZnhrdWdvcnNod2wzMDJvaW5qdnF5YXZqMTFsemNpNHgwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5w2ZJWmDFgIiSBrP4e/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/)  
 
 ## Notes
 
-
-The challenging part was making sure the random "Next" button never repeated the same card logic , and using `Math.random()` with a changing `key` prop to reset each card's flip state.
+Comparing the guess against the answer required handling case sensitivity and extra whitespace, so I used `.trim().toLowerCase()` on both strings before checking equality. For navigation, the trickiest part was making sure the Previous/Next buttons don't allow wrap-around — I used conditions like `currentIndex > 0` and `currentIndex < cardData.length - 1` inside the click handlers, and tied those same conditions to each button's `disabled` attribute so they visually gray out at the start and end of the list.
 
 ## License
 
-    Copyright 2026 Avash
+    Copyright 2026 Avash Shrestha
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
