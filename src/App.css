@@ -63,9 +63,64 @@ h1 {
   margin-bottom: 0;
 }
 
-.next-button {
-  margin-top: 24px;
-  padding: 12px 28px;
+.guess-form {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.guess-form label {
+  font-weight: 600;
+}
+
+.guess-form input[type="text"] {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #b6c8b6;
+  font-size: 1rem;
+}
+
+.guess-form button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #1b2d1b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.guess-form button:hover {
+  background-color: #335533;
+}
+
+.feedback {
+  margin-top: 14px;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.feedback.correct {
+  color: #1b7d3a;
+}
+
+.feedback.incorrect {
+  color: #b4232c;
+}
+
+.nav-buttons {
+  margin-top: 28px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.nav-button {
+  padding: 12px 24px;
   font-size: 1rem;
   font-weight: bold;
   background-color: #1b2d1b;
@@ -75,6 +130,13 @@ h1 {
   cursor: pointer;
 }
 
-.next-button:hover {
+.nav-button:hover:not(:disabled) {
   background-color: #335533;
 }
+
+.nav-button:disabled {
+  background-color: #c7d3c7;
+  color: #8a988a;
+  cursor: not-allowed;
+}
+
